@@ -1,17 +1,12 @@
 import React from 'react';
-
+import Directory from './directory/directory';
 const Homepage = ()=>{
     return(
         <div className="Home-page">
-            <div className="directory-menu">
-                <div className="menu-item">
-                    <div className="content">
-                        <h3 className="title">Hats</h3>
-                        <span className="subtitle">Shop Now</span>
-                    </div>
-                </div>
-            </div>
+            
+                <Directory/>
         </div>
+       
     )
 }
 
