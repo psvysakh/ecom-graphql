@@ -1,10 +1,16 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Directory from './directory/directory';
-const Homepage = ()=>{
+import './Homepage.scss';
+const Homepage = (props)=>{
     return(
         <div className="Home-page">
+            <div>
             
+            <button onClick={()=>{props.history.push('/hats')}}>Hats</button>
                 <Directory/>
+            </div>
+                
         </div>
        
     )
