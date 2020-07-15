@@ -12,7 +12,7 @@ class Directory extends React.Component{
             },
             {
                 title:"Jackets",
-                imageUrl:"https://lh3.googleusercontent.com/proxy/cgof5tbmrdv9p4MnZZAzsIvgDOKCdfdjwhxlF5Ea3Um3nfmH2kBDvQHUYAe0v2RprYoILV-Wx6LNUY_7k-WsAjCgXX0vjlv9ojBmkylPH8OzRFpPPLUXqjPfrk8reg",
+                imageUrl:"https://pngimg.com/uploads/leather_jacket/leather_jacket_PNG1.png",
                 id:2,
                 linkUrl:"jackets"
             },

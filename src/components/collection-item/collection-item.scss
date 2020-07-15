@@ -1,0 +1,9 @@
+.collection-item{
+    margin-right: 20px;
+    & .details{
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+        padding: 0;
+    }
+}
