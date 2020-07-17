@@ -6,8 +6,6 @@ const Homepage = (props)=>{
     return(
         <div className="Home-page">
             <div>
-            
-            <button onClick={()=>{props.history.push('/hats')}}>Hats</button>
                 <Directory/>
             </div>
                 

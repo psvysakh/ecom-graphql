@@ -1,0 +1,12 @@
+.header{
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    & .nav{
+        display: flex;
+        & .nav-menu{
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+}
