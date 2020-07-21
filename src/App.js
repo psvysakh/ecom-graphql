@@ -5,23 +5,35 @@ import Shoppage from './pages/shop/shop';
 import Header from './components/Header/header';
 import SignInUp from './pages/SignInUp/signInUp';
 
-import {auth} from './firebase/firebase.util';
+import {auth,createUser} from './firebase/firebase.util';
 
 
 class App extends React.Component{
   state={
     currentUser:null
   }
-  unSubscribeFromAuth=null;
+  toggleSubscription=null;
 
   componentDidMount(){
-    this.unSubscribeFromAuth = auth.onAuthStateChanged(user=>{
-      this.setState({currentUser:user});
-      console.log(user);
+    this.toggleSubscription = auth.onAuthStateChanged( async userAuth=>{
+      if(userAuth){
+                  const userRef = await createUser(userAuth);
+                  userRef.onSnapshot(snapshot=>{
+                    this.setState({
+                      currentUser:{
+                        id:snapshot.id,
+                        ...snapshot.data()
+                      }
+                    })
+                  })
+                  
+              }
+              this.setState({currentUser:userAuth});
     })
+   
   }
   componentWillUnmount(){
-    this.unSubscribeFromAuth();
+    this.toggleSubscription();
   }
   render(){
     return (
