@@ -6,3 +6,9 @@ export const toggleCartHidden=()=>(
 
     }
 )
+export const addItem=(item)=>(
+    {
+        type:cartActionType.ADD_ITEM,
+        payload:item
+    }
+)

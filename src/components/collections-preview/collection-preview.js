@@ -6,9 +6,9 @@ const CollectionPreview=(props)=>{
         <div className="collection-preview">
            <h1 className="title">{props.title}</h1>
            <div className="item">
-                {props.items.filter((item,idx)=>idx <4).map(({id,...itemProps})=>{
+                {props.items.filter((item,idx)=>idx <4).map((item)=>{
                     return(
-                    <CollectionItem key={id} {...itemProps}/>
+                    <CollectionItem key={item.id} item={item}/>
                     )
                 })}
            </div>
