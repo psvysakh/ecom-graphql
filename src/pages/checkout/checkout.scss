@@ -1,0 +1,18 @@
+.checkout-page{
+    width: 80%;
+    margin: 0 auto;
+    .checkout-header{
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        padding: 20px 0;
+        .header-block{
+            width: 23%;
+            &:last-child{
+                width: 8%;
+            }
+        }
+    }
+    .total{
+        text-align: right;
+    }
+}
