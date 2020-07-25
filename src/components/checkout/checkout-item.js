@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {addItem,clearItemFromCart} from '../../redux/cart/cart.action';
+import {addItem,removeItem,clearItemFromCart} from '../../redux/cart/cart.action';
 
 import './checkout-item.scss';
-const CheckoutItem=({item,add,clear})=>{
+const CheckoutItem=({item,add,remove,clear})=>{
     const {imageUrl,name,quantity,price}=item;
  return(<div className="checkout-item">
      <div className="item-body">
@@ -15,7 +15,7 @@ const CheckoutItem=({item,add,clear})=>{
             <span>{name}</span>
         </div>
         <div className="item-block add">
-            <span className="sub">&#10094;</span>
+            <span className="sub" onClick={()=>remove(item)}>&#10094;</span>
             <span>{quantity}</span>
             <span className="add" onClick={()=>add(item)}>&#10095;</span>
         </div>
@@ -30,6 +30,7 @@ const CheckoutItem=({item,add,clear})=>{
 }
 const mapDispatchToProps=dispatch=>({
     add:item=>dispatch(addItem(item)),
+    remove:item=>{console.log(item);dispatch(removeItem(item))},
     clear:item=>dispatch(clearItemFromCart(item))
 })
 
