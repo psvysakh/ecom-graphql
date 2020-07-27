@@ -1,6 +1,6 @@
 import React from 'react';
 import {auth} from '../../firebase/firebase.util';
-import {Link} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import {createStructuredSelector} from 'reselect';
@@ -12,10 +12,10 @@ import {ReactComponent as Logo} from '../../assets/crown.svg';
 import CartIcon from '../cart-icon/cartIcon';
 import Cartdropdown from '../cartdropdown/cart-dropdown';
 import './header.scss';
-const Header =({currentUser,hidden})=>{
+const Header =({currentUser,hidden,history})=>{
     return(
         <div className="header">
-            <div className="logo-wrapper">
+            <div className="logo-wrapper" onClick={()=>history.push('/')}>
                 <Logo/>
             </div>
             <div className="nav">
@@ -33,4 +33,4 @@ const mapStateToProps=createStructuredSelector({
     currentUser:selectCurrentUser,
     hidden:selectCartHidden
 })
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));
