@@ -5,6 +5,9 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from './redux/user/user.selector';
 
+
+
+
 import Homepage from './pages/Home/Homepage';
 import Shoppage from './pages/shop/shop';
 import Header from './components/Header/header';
@@ -33,6 +36,7 @@ class App extends React.Component{
                   
               }
               setCurUser(userAuth);
+              
     })
    
   }

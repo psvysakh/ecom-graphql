@@ -13,24 +13,24 @@ const INITIAL_STATE={
             linkUrl:"jackets"
         },
         {
-            title:"Shoes",
+            title:"Sneakers",
             imageUrl:"https://i.dlpng.com/static/png/324837_preview.png",
             id:3,
             linkUrl:"sneakers"
         },
         {
-            title:"Men",
+            title:"Mens",
             imageUrl:"https://www.freepngimg.com/thumb/model/26650-7-mens-fashion.png",
             id:4,
             size:"large",
-            linkUrl:"men"
+            linkUrl:"mens"
         },
         {
-            title:"Women",
+            title:"Womens",
             imageUrl:"https://pluspng.com/img-png/women-shopping-png-hd-women-shopping-hd-free-png-image-2832.png",
             id:5,
             size:"large",
-            linkUrl:"women"
+            linkUrl:"womens"
         }
         
     ]
