@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from './redux/user/user.selector';
-
+import {checkUserSession} from './redux/user/user.action';
 
 
 
@@ -14,8 +14,8 @@ import Header from './components/Header/header';
 import SignInUp from './pages/SignInUp/signInUp';
 import Checkoutpage from './pages/checkout/checkoutpage';
 
-import {auth,createUser} from './firebase/firebase.util';
-import {setCurrentUser} from './redux/user/user.action';
+/* import {auth,createUser} from './firebase/firebase.util';
+import {setCurrentUser} from './redux/user/user.action'; */
 
 
 class App extends React.Component{
@@ -23,8 +23,10 @@ class App extends React.Component{
   toggleSubscription=null;
 
   componentDidMount(){
-    const {setCurUser} = this.props;
-    this.toggleSubscription = auth.onAuthStateChanged( async userAuth=>{
+    const {checkUserSession} = this.props;
+    checkUserSession();
+    /* const {setCurUser} = this.props; */
+    /* this.toggleSubscription = auth.onAuthStateChanged( async userAuth=>{
       if(userAuth){
                   const userRef = await createUser(userAuth);
                   userRef.onSnapshot(snapshot=>{
@@ -37,7 +39,7 @@ class App extends React.Component{
               }
               setCurUser(userAuth);
               
-    })
+    }) */
    
   }
   componentWillUnmount(){
@@ -64,6 +66,6 @@ const mapStateToProps = createStructuredSelector({ // root-reducer destructured 
   currentUser:selectCurrentUser
 })
 const mapDispatchToProps =dispatch=>({
-setCurUser:theUser=>dispatch(setCurrentUser(theUser))
+checkUserSession:()=>dispatch(checkUserSession())
 })
 export default connect(mapStateToProps,mapDispatchToProps)(App);
