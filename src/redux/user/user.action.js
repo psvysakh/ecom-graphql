@@ -34,4 +34,19 @@ import userActionType from '../user/user.type';
     export const signOutFailure=(error)=>({
         type:userActionType.SIGNOUT_FAILURE,
         payload:error
-})
+        })
+        export const signUpStart=(userCredentials)=>({
+                type:userActionType.SIGNUP_START,
+                payload:userCredentials
+        })
+        export const signUpSuccess=({user,additionalData})=>({
+                type:userActionType.SIGNUP_SUCCESS,
+                payload:{
+                        user,
+                        additionalData
+                }
+        })
+        export const signUpFailure=(error)=>({
+                type:userActionType.SIGNUP_FAILURE,
+                payload:error
+        })

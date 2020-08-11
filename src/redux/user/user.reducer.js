@@ -21,6 +21,7 @@ switch(action.type){
         }
     case userActionType.SIGNIN_FAILURE:
     case userActionType.SIGNOUT_FAILURE:
+    case userActionType.SIGNUP_FAILURE:
         return{
             ...state,
             error:action.payload
