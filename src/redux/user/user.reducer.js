@@ -1,34 +1,19 @@
-import userActionType from '../user/user.type';
-const INITIAL_STATE={
-    currentUser:null,
-    error:null
-}
+import { UserActionTypes } from './user.types';
 
-const userReducer =(state = INITIAL_STATE,action)=>{
-switch(action.type){
-    case userActionType.SIGNIN_SUCCESS:
-    /* case userActionType.SIGNIN_SUCCESS: */
-        return{
-            ...state,
-            currentUser:action.payload,
-            error:null
-        }
-    case userActionType.SIGNOUT_SUCCESS:
-        return {
-            ...state,
-            currentUser:null,
-            error:null
-        }
-    case userActionType.SIGNIN_FAILURE:
-    case userActionType.SIGNOUT_FAILURE:
-    case userActionType.SIGNUP_FAILURE:
-        return{
-            ...state,
-            error:action.payload
-        }
+const INITIAL_STATE = {
+  currentUser: null
+};
+
+const userReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case UserActionTypes.SET_CURRENT_USER:
+      return {
+        ...state,
+        currentUser: action.payload
+      };
     default:
-        return state;
-}
-}
+      return state;
+  }
+};
 
 export default userReducer;
